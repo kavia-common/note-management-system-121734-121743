@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Roboto:wght@400;500&display=swap');
+:root {
+  /* Color tokens from design system */
+  --color_252525: #252525;
+  --color_ff9e9e: #ff9e9e;
+  --color_000000: #000000;
+  --color_91f48f: #91f48f;
+  --color_fff599: #fff599;
+  --color_ffffff: #ffffff;
+  --color_3b3b3b: #3b3b3b;
+  --color_9effff: #9effff;
+  --color_b69cff: #b69cff;
+  --color_fd99ff: #fd99ff;
+  --color_ff0000: #ff0000;
+  --color_c4c4c4: #c4c4c4;
+  --color_cfcfcf: #cfcfcf;
+  --color_9a9a9a: #9a9a9a;
+  --color_263238: #263238;
+  --color_d4d6d7: #d4d6d7;
+  --color_7f8a8e: #7f8a8e;
+  --color_3b464c: #3b464c;
+  --color_4fb6b2: #4fb6b2;
+  --color_d0d0d0: #d0d0d0;
+  --color_606060: #606060;
+  --color_30be71: #30be71;
+  --color_cccccc: #cccccc;
+  --color_f4f5d5: #f4f5d5;
+
+  /* Typography tokens (sizes, line-heights) */
+  --font-nunito: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-roboto: "Roboto", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* border radii */
+  --radius-3: 3px;
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-15: 15px;
+  --radius-20: 20px;
+  --radius-30: 30px;
+  --radius-60: 60px;
+
+  /* shadows */
+  --shadow-0: -5px 0px 10px 0 rgba(0,0,0,1);
+  --shadow-1: 0px 5px 10px 0 rgba(0,0,0,1);
+  --shadow-2: 45px -10px 80px 0 rgba(0,0,0,1);
+}
+
+/* CSS reset essentials */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #111; /* Page backdrop behind the framed screen */
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Base screen frame (the Figma frame) */
+.screen {
+  position: relative;
+  width: 414px;
+  height: 1100px;
+  margin: 16px auto;
+  background: var(--color_252525); /* style_0 background */
+  border-radius: var(--radius-30);  /* style_0 border_radius */
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography utilities mapped from tokens */
+.typo-13 {
+  font-family: var(--font-nunito);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 34.1px;
+  letter-spacing: 0;
+  color: var(--color_000000);
+  text-align: left;
+}
+.typo-14 {
+  font-family: var(--font-nunito);
+  font-size: 43px;
+  font-weight: 600;
+  line-height: 58.65199661254883px;
+  letter-spacing: 0;
+  color: var(--color_ffffff);
+  text-align: left;
+}
+.typo-15 {
+  font-family: var(--font-nunito);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 27.279998779296875px;
+  letter-spacing: 0;
+  color: var(--color_ffffff);
+  text-align: left;
+}
+
+/* Generic shapes/components */
+.shape {
+  position: absolute;
+  border: none;
+}
+
+.note-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--color_3b3b3b); /* style_6 */
+  border-radius: var(--radius-15); /* style_6 */
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.note-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.fab {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--color_252525); /* style_39 background */
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-0), var(--shadow-1); /* style_39 shadows */
+  cursor: pointer;
+  z-index: 10;
+}
+
+.fab img {
+  width: 48px;
+  height: 48px;
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Additional typography utilities from design system */
+.typo-18 {
+  font-family: var(--font-nunito);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 65.47200012207031px;
+  letter-spacing: 0;
+  color: var(--color_9a9a9a);
+  text-align: left;
+}
+.typo-19 {
+  font-family: var(--font-nunito);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 31.371999740600586px;
+  letter-spacing: 0;
+  color: var(--color_9a9a9a);
+  text-align: left;
+}
+.typo-22 {
+  font-family: var(--font-nunito);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 47.73999786376953px;
+  letter-spacing: 0;
+  color: var(--color_ffffff);
+  text-align: left;
+}
+.typo-23 {
+  font-family: var(--font-nunito);
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 31.371999740600586px;
+  letter-spacing: 0;
+  color: var(--color_ffffff);
+  text-align: left;
+}

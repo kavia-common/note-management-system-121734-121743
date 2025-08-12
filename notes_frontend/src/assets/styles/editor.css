@@ -1,0 +1,90 @@
+/* Screen-specific overrides and placements for "Editor" */
+
+.editor-screen {
+  height: 896px; /* Figma frame height */
+}
+
+/* Top-left back button (Button 4, style_6) at x:22, y:51, size:50 */
+.btn-back {
+  left: 22px;  /* 990 - 968 */
+  top: 51px;   /* 1497 - 1446 */
+}
+
+/* Top-right visibility and save buttons (style_6) */
+.btn-visibility {
+  left: 268px; /* 1236 - 968 */
+  top: 51px;   /* 1497 - 1446 */
+}
+.btn-save {
+  left: 339px; /* 1307 - 968 */
+  top: 51px;   /* 1497 - 1446 */
+}
+
+/* Title "Title" (typo_18) at x:24, y:141, w:100, h:52 */
+.editor-title {
+  position: absolute;
+  left: 24px;   /* 992 - 968 */
+  top: 141px;   /* 1587 - 1446 */
+  width: 100px; /* Figma node width */
+  height: 52px; /* Figma node height */
+  margin: 0;
+}
+
+/* Body placeholder "Type something..." (typo_19) at x:24, y:233 */
+.editor-body {
+  position: absolute;
+  left: 24px;    /* 992 - 968 */
+  top: 233px;    /* 1679 - 1446 */
+  width: 366px;  /* Fill within 24px lateral padding: 414 - (24*2) = 366 */
+  min-height: 330px; /* So content has room before the toolbar */
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Formatting options bar (container) at x:10, y:587, w:393, h:25 */
+.format-bar {
+  position: absolute;
+  left: 10px;   /* 978 - 968 */
+  top: 587px;   /* 2033 - 1446 */
+  width: 393px; /* Figma width */
+  height: 25px; /* Figma height */
+  display: grid;
+  grid-template-columns: repeat(12, 24px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/* Format buttons: transparent, icon-only */
+.fmt-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.fmt-btn:focus-visible {
+  outline: 2px solid var(--color_cfcfcf);
+  outline-offset: 2px;
+}
+
+/* Shared icon size utility */
+.icon-24 {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Editable placeholders using data-placeholder */
+.editable {
+  outline: none;
+}
+.editable[contenteditable="true"] {
+  cursor: text;
+}
+.editable:empty::before {
+  content: attr(data-placeholder);
+  color: var(--color_9a9a9a);
+  opacity: 0.8;
+}

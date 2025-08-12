@@ -1,0 +1,40 @@
+ /* Screen-specific placements for "Sample Note" */
+
+.sample-note-screen {
+  height: 896px; /* Figma frame height */
+}
+
+/* Top-left back button (style_6 square 50x50) at x:2770, y:14 within frame x:2745, y:-60 => left:25, top:74 */
+.btn-back {
+  position: absolute;
+  left: 25px;
+  top: 74px;
+}
+
+/* Top-right mode button (style_6 50x50) at x:3084, y:14 => left:339, top:74 */
+.btn-mode {
+  position: absolute;
+  left: 339px;
+  top: 74px;
+}
+
+/* Title text block at x:2772, y:105, w:360, h:186 => left:27, top:165 */
+.sample-title {
+  position: absolute;
+  left: 27px;
+  top: 165px;
+  width: 360px;
+  height: 186px;
+  margin: 0;
+}
+
+/* Body text block at x:2772, y:328, w:360, h:447 => left:27, top:388 */
+.sample-body {
+  position: absolute;
+  left: 27px;
+  top: 388px;
+  width: 360px;
+  height: 447px;
+  margin: 0;
+  white-space: pre-wrap;
+}

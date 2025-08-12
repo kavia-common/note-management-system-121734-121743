@@ -1,0 +1,54 @@
+ /* Screen-specific overrides and placements for "Home Screen Empty" */
+
+.home-screen-empty {
+  height: 896px; /* Frame height from Figma */
+}
+
+/* Hero Title: 'Notes' (typo_14) at x:24, y:47 */
+.hero-title {
+  position: absolute;
+  left: 24px;
+  top: 47px;
+  width: 115px; /* Figma node width */
+  height: 59px; /* Figma node height */
+  margin: 0;
+}
+
+/* Top-right buttons (style_6 squares) */
+.btn-search {
+  position: absolute;
+  left: 268px; /* -865 - (-1133) */
+  top: 51px;   /* -1118 - (-1169) */
+}
+.btn-info {
+  position: absolute;
+  left: 339px; /* -794 - (-1133) */
+  top: 51px;   /* -1118 - (-1169) */
+}
+
+/* Illustration rectangle image at x:32, y:283, w:350, h:286.73 */
+.illustration {
+  position: absolute;
+  left: 32px;   /* -1101 - (-1133) */
+  top: 283px;   /* -886 - (-1169) */
+  width: 350px;
+  height: 286.73077392578125px;
+  object-fit: cover;
+  border: none;
+}
+
+/* Prompt text "Create your first note !" (typo_15) at x:109, y:576 */
+.empty-prompt {
+  position: absolute;
+  left: 109px; /* -1024 - (-1133) */
+  top: 576px;  /* -593 - (-1169) */
+  width: 195px; /* Figma node width */
+  height: 27px; /* Figma node height */
+  margin: 0;
+}
+
+/* Floating Action Button (Ellipse style_39 + add icon) at x:309, y:777 */
+.fab-add {
+  left: 309px;  /* -824 - (-1133) */
+  top: 777px;   /* -392 - (-1169) */
+}

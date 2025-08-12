@@ -1,0 +1,128 @@
+/* The root frame is already styled in common.css (.screen) */
+
+/* Hero Title: 'Notes' (typo_14) at x:24, y:47 */
+.hero-title {
+  position: absolute;
+  left: 24px;
+  top: 47px;
+  width: 115px; /* as per Figma node width */
+  height: 59px; /* as per Figma node height */
+  margin: 0;
+}
+
+/* Top-right buttons (style_6) */
+.btn-search {
+  left: 268px; /* 1870 - 1602 */
+  top: 51px;   /* -772 - (-823) */
+}
+.btn-info {
+  left: 339px; /* 1941 - 1602 */
+  top: 51px;   /* -772 - (-823) */
+}
+
+/* Card rectangles positioned with their Figma coordinates and sizes */
+/* Rectangle 8 (style_1: #ff9e9e, radius 10) at x:24, y:143, w:365, h:157 */
+.card-1 {
+  left: 24px;
+  top: 143px;
+  width: 365px;
+  height: 157px;
+  background: var(--color_ff9e9e);
+  border-radius: var(--radius-10);
+}
+
+/* Text for card 1 at x:69, y:168, w:270, h:103 */
+.text-card-1 {
+  position: absolute;
+  left: 69px;
+  top: 168px;
+  width: 270px;
+  height: 103px;
+  margin: 0;
+}
+
+/* Rectangle 11 (style_3: #91f48f, radius 10) at x:24, y:323, w:365, h:123 */
+.card-2 {
+  left: 24px;
+  top: 323px;
+  width: 365px;
+  height: 123px;
+  background: var(--color_91f48f);
+  border-radius: var(--radius-10);
+}
+
+/* Text for card 2 at x:69, y:352, w:254, h:64 */
+.text-card-2 {
+  position: absolute;
+  left: 69px;
+  top: 352px;
+  width: 254px;
+  height: 64px;
+  margin: 0;
+}
+
+/* Rectangle 10 (style_4: #fff599, radius 10) at x:24, y:471, w:365, h:110 */
+.card-3 {
+  left: 24px;
+  top: 471px;
+  width: 365px;
+  height: 110px;
+  background: var(--color_fff599);
+  border-radius: var(--radius-10);
+}
+
+/* Text for card 3 at x:69, y:494, w:259, h:67 */
+.text-card-3 {
+  position: absolute;
+  left: 69px;
+  top: 494px;
+  width: 259px;
+  height: 67px;
+  margin: 0;
+}
+
+/* Rectangle 13 (style_7: #9effff, radius 10) at x:24, y:606, w:365, h:120 */
+.card-4 {
+  left: 24px;
+  top: 606px;
+  width: 365px;
+  height: 120px;
+  background: var(--color_9effff);
+  border-radius: var(--radius-10);
+}
+
+/* Text for card 4 at x:69, y:632, w:287, h:68 */
+.text-card-4 {
+  position: absolute;
+  left: 69px;
+  top: 632px;
+  width: 287px;
+  height: 68px;
+  margin: 0;
+}
+
+/* Rectangle 9 (style_8: #b69cff, radius 10) at x:24, y:751, w:365, h:100 */
+.card-5 {
+  left: 24px;
+  top: 751px;
+  width: 365px;
+  height: 100px;
+  background: var(--color_b69cff);
+  border-radius: var(--radius-10);
+}
+
+/* Text for card 5 at x:69, y:768, w:297, h:66 */
+.text-card-5 {
+  position: absolute;
+  left: 69px;
+  top: 768px;
+  width: 297px;
+  height: 66px;
+  margin: 0;
+}
+
+/* Floating Action Button (Ellipse 1 style_39 + add icon) at x:309, y:777, w:h 70 */
+.fab-add {
+  left: 309px; /* 1911 - 1602 */
+  top: 777px;  /* -46 - (-823) */
+}
