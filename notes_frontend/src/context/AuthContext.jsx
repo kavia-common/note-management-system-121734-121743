@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { storageGet, storageSet, storageRemove } from "../utils/storage";
 import { getSupabase } from "../services/supabase";
+import { getURL } from "../utils/getURL";
 
 const AuthContext = createContext(null);
 
@@ -92,8 +93,7 @@ export function AuthProvider({ children }) {
           email,
           password,
           options: {
-            // In real deployment, REACT_APP_SITE_URL should point to your app URL
-            emailRedirectTo: process.env.REACT_APP_SITE_URL || window.location.origin,
+            emailRedirectTo: `${getURL()}auth/callback`,
           },
         });
         if (error) throw error;

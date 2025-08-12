@@ -14,6 +14,8 @@ import { NotesProvider } from './context/NotesContext';
 import NotesApp from './pages/NotesApp';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
+import AuthCallback from './pages/auth/AuthCallback';
+import AuthError from './pages/auth/AuthError';
 
 /** PUBLIC_INTERFACE
  * App
@@ -78,6 +80,8 @@ function App() {
                   } />
                   <Route path="/signin" element={<SignIn />} />
                   <Route path="/signup" element={<SignUp />} />
+                  <Route path="/auth/callback" element={<AuthCallback />} />
+                  <Route path="/auth/error" element={<AuthError />} />
                   {/* Figma reference demo routes */}
                   <Route path="/home" element={<HomeScreen />} />
                   <Route path="/home-empty" element={<HomeScreenEmpty />} />
