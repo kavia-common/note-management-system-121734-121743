@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useNotes } from "../../context/NotesContext";
 
@@ -7,21 +7,37 @@ import { useNotes } from "../../context/NotesContext";
  * TopBar
  * Header bar with app title, Figma-style icon buttons (search/info), responsive search,
  * desktop New button, and auth actions. Maintains existing search functionality.
+ *
+ * Accepts optional controlled props to integrate with mobile hero:
+ * - showSearch: boolean | undefined
+ * - onToggleSearch: () => void
+ * - onInfo: () => void
  */
-export default function TopBar({ onNewNote }) {
+export default function TopBar({ onNewNote, showSearch: showSearchProp, onToggleSearch, onInfo: onInfoProp }) {
   const { user, signOut } = useAuth();
   const { search, setSearch } = useNotes();
-  const [showSearch, setShowSearch] = useState(false);
 
-  const toggleSearch = () => setShowSearch((s) => !s);
-  const onInfo = () => {
+  // Uncontrolled fallback when parent doesn't control search popover
+  const [showSearchUncontrolled, setShowSearchUncontrolled] = useState(false);
+  const isControlled = typeof showSearchProp === "boolean";
+  const showSearch = isControlled ? showSearchProp : showSearchUncontrolled;
+
+  const toggleSearch = useCallback(() => {
+    if (onToggleSearch) onToggleSearch();
+    else setShowSearchUncontrolled((s) => !s);
+  }, [onToggleSearch]);
+
+  const onInfo = useCallback(() => {
+    if (onInfoProp) return onInfoProp();
     // eslint-disable-next-line no-alert
     alert("Information (placeholder)");
-  };
+  }, [onInfoProp]);
+
+  const title = useMemo(() => "Notes", []);
 
   return (
     <header className="topbar" role="banner">
-      <div className="topbar-title">Notes</div>
+      <div className="topbar-title">{title}</div>
 
       {/* Desktop inline search */}
       <input

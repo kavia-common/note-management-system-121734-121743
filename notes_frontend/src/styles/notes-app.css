@@ -222,3 +222,161 @@
     display: none;
   }
 }
+
+/* ============ Home-fidelity (mobile) ============ */
+@media (max-width: 959px) {
+  /* Dark background and Nunito typography */
+  .home-fidelity {
+    background: var(--color_252525);
+    color: var(--color_ffffff);
+  }
+
+  /* Keep TopBar for search popover, but visually collapse it behind hero */
+  .home-fidelity .topbar {
+    background: transparent;
+    border-bottom: none;
+    padding: 0;
+    height: 0;
+    overflow: visible;
+  }
+  .home-fidelity .topbar-title,
+  .home-fidelity .search-inline,
+  .home-fidelity .topbar .topbar-actions > * {
+    /* Hide all inline content; popover remains available */
+    display: none !important;
+  }
+  .home-fidelity .search-popover {
+    /* Popover aligns to viewport top with dark background variant */
+    background: #1e1e1e;
+    border-color: #2a2a2a;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .home-fidelity .search-popover .search-input {
+    background: #121212;
+    color: #fff;
+    border-color: #2a2a2a;
+  }
+  .home-fidelity .search-popover .search-input::placeholder {
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Hero with big title and icon squares on the right */
+  .home-hero {
+    position: relative;
+    padding: 24px 16px 8px 16px;
+  }
+  .home-hero-title {
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color_ffffff);
+    margin: 8px 0 0;
+    letter-spacing: 0;
+  }
+  .hero-actions {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+  }
+  .home-fidelity .hero-btn.square-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: var(--color_3b3b3b);
+    color: #fff;
+    border-radius: 15px;
+  }
+  .home-fidelity .hero-btn.square-btn svg {
+    stroke: #fff;
+    stroke-width: 2;
+  }
+
+  /* Mobile note list cards with Figma palette and sizes */
+  .note-list-mobile {
+    display: grid;
+    gap: 16px;
+    padding: 8px 16px 96px; /* leave room for FAB */
+  }
+
+  .mobile-empty {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .mobile-note-card {
+    position: relative;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    padding: 16px 18px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.05s ease, filter 0.2s ease;
+  }
+  .mobile-note-card:active {
+    transform: translateY(1px);
+  }
+  .mobile-note-card .mobile-note-title {
+    font-size: 25px; /* typo_13 */
+    font-weight: 400;
+    line-height: 1.35;
+    color: #000;
+  }
+
+  /* Heights and background colors mapped in sequence to mimic Figma cards */
+  .note-list-mobile .mobile-note-card:nth-child(5n + 1) {
+    height: 157px;
+    background: var(--color_ff9e9e);
+  }
+  .note-list-mobile .mobile-note-card:nth-child(5n + 2) {
+    height: 123px;
+    background: var(--color_91f48f);
+  }
+  .note-list-mobile .mobile-note-card:nth-child(5n + 3) {
+    height: 110px;
+    background: var(--color_fff599);
+  }
+  .note-list-mobile .mobile-note-card:nth-child(5n + 4) {
+    height: 120px;
+    background: var(--color_9effff);
+  }
+  .note-list-mobile .mobile-note-card:nth-child(5n + 5) {
+    height: 100px;
+    background: var(--color_b69cff);
+  }
+
+  /* Hide desktop main-area on mobile home-fidelity to match Figma */
+  .home-fidelity .main-area {
+    display: none;
+  }
+
+  /* FAB restyled to match dark circular with strong shadows */
+  .home-fidelity .fab-add {
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height: 70px;
+    background: var(--color_252525);
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow-0), var(--shadow-1);
+  }
+  .home-fidelity .fab-add svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 2.8;
+  }
+}
+
+/* Desktop hides mobile hero/list automatically */
+@media (min-width: 960px) {
+  .home-hero,
+  .note-list-mobile {
+    display: none;
+  }
+}

@@ -14,6 +14,23 @@
   --radius-sm: 8px;
 
   --sidebar-w: 280px;
+
+  /* Typography family (Nunito added) */
+  --font-nunito: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Figma color tokens used in home-fidelity mobile styling */
+  --color_252525: #252525;
+  --color_3b3b3b: #3b3b3b;
+  --color_ff9e9e: #ff9e9e;
+  --color_91f48f: #91f48f;
+  --color_fff599: #fff599;
+  --color_9effff: #9effff;
+  --color_b69cff: #b69cff;
+  --color_ffffff: #ffffff;
+
+  /* Shadow tokens to approximate Figma shadows for FAB */
+  --shadow-0: -5px 0px 10px rgba(0,0,0,1);
+  --shadow-1: 0px 5px 10px rgba(0,0,0,1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +50,7 @@ html, body, #root {
 body {
   background: var(--bg);
   color: var(--text);
+  font-family: var(--font-nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
 }
 
 /* App shell */
