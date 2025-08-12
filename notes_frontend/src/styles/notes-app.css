@@ -1,0 +1,224 @@
+:root {
+  --elev-1: 0 1px 2px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.05);
+  --elev-2: 0 4px 12px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.06);
+}
+
+/* TopBar adjustments to reflect minimal light style with icon buttons */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.topbar-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-right: auto;
+  letter-spacing: -0.01em;
+}
+
+/* Square icon buttons (Search, Info) matching Figma's rounded squares */
+.square-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: var(--bg-muted);
+  color: var(--text);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.square-btn:hover {
+  background: #eef1f4;
+}
+
+.square-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+/* Inline search is desktop-first; hidden on small screens */
+.search-inline {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .search-inline {
+    display: block;
+    min-width: 280px;
+  }
+}
+
+/* Mobile search popover when search icon toggled */
+.search-popover {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: calc(100% + 8px);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: var(--elev-2);
+}
+
+.search-popover .search-input {
+  width: 100%;
+}
+
+/* Desktop-only New button (mobile gets a FAB) */
+@media (max-width: 959px) {
+  .new-btn-desktop {
+    display: none !important;
+  }
+}
+
+/* Sidebar refinements */
+.sidebar {
+  background: var(--bg);
+}
+
+.sidebar-inner {
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Note list & cards - airy light style with hover and active accent */
+.note-list {
+  display: grid;
+  gap: 10px;
+}
+
+.note-card {
+  text-align: left;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .note-card {
+    background: var(--bg-muted);
+  }
+}
+
+.note-card:hover {
+  box-shadow: var(--elev-1);
+}
+
+.note-card:active {
+  transform: translateY(1px);
+}
+
+.note-card h4 {
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.note-card p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.note-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(26,115,232,0.15);
+}
+
+/* Content area spacing */
+.content {
+  min-height: 0;
+  padding: 16px;
+}
+
+/* Editor form refinements */
+.editor-form {
+  display: grid;
+  gap: 10px;
+}
+
+.input, .textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus, .textarea:focus, .search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+}
+
+.textarea {
+  min-height: 240px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Floating Action Button (FAB) for Add New on mobile) */
+.fab-add {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--elev-2);
+  cursor: pointer;
+  z-index: 30;
+}
+
+.fab-add:hover {
+  filter: brightness(0.95);
+}
+
+.fab-add svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+}
+
+/* Hide FAB on desktop; show on mobile */
+@media (min-width: 960px) {
+  .fab-add {
+    display: none;
+  }
+}
