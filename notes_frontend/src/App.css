@@ -84,13 +84,98 @@
   transform: translateY(0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* App content container */
+.app-container {
+  width: 100%;
+  max-width: 720px;
+  margin: 80px auto 40px auto;
+  padding: 0 16px 32px 16px;
+  text-align: left;
+}
+
+.app-title {
+  margin: 0 0 24px 0;
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+/* Editor Styles */
+.editor {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.editor-label {
+  display: block;
+  margin: 8px 0 6px 0;
+  font-size: 14px;
+  color: var(--text-primary);
+  opacity: 0.85;
+}
+
+.editor-input,
+.editor-textarea {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.editor-input::placeholder,
+.editor-textarea::placeholder {
+  color: rgba(0,0,0,0.45);
+}
+
+[data-theme="dark"] .editor-input::placeholder,
+[data-theme="dark"] .editor-textarea::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.editor-input:focus,
+.editor-textarea:focus {
+  border-color: var(--text-secondary);
+  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.25);
+}
+
+.editor-textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.editor-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 /* Responsive design for mobile */
@@ -100,5 +185,10 @@
     right: 10px;
     padding: 8px 16px;
     font-size: 12px;
+  }
+
+  .app-container {
+    margin-top: 72px;
+    padding: 0 12px 24px 12px;
   }
 }

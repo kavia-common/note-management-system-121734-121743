@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Editor from './components/Editor';
 
-// PUBLIC_INTERFACE
+/** PUBLIC_INTERFACE
+ * App
+ * This is the main application component. It provides a light/dark theme toggle
+ * and renders the Editor screen so users can input/edit notes (title + body).
+ */
 function App() {
   const [theme, setTheme] = useState('light');
 
@@ -11,36 +15,29 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // PUBLIC_INTERFACE
+  /** PUBLIC_INTERFACE
+   * toggleTheme
+   * Toggles the application theme between light and dark modes.
+   */
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <button 
-          className="theme-toggle" 
+        <button
+          className="theme-toggle"
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <div className="app-container">
+          <h1 className="app-title">Notes</h1>
+          <Editor />
+        </div>
       </header>
     </div>
   );
